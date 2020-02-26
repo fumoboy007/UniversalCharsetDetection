@@ -1,0 +1,31 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  test-macos:
+    name: Run Tests on macOS
+    runs-on: macos-latest
+
+    steps:
+      - name: Print Swift compiler version
+        run: "swift --version"
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: "swift test --parallel"
+
+  test-linux:
+    name: Run Tests on Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Swift compiler version
+        uses: Didstopia/SwiftAction@v1.0.1
+        with:
+          swift-action: "--version"
+      - uses: actions/checkout@v2
+      - name: Run tests
+        uses: Didstopia/SwiftAction@v1.0.1
+        with:
+          # TODO: Enable parallel tests after SR-12272 is fixed.
+          swift-action: "test --enable-test-discovery"
