@@ -1,0 +1,3 @@
+[submodule "uchardet"]
+	path = uchardet
+	url = git://cgit.freedesktop.org/uchardet/uchardet/
