@@ -15,7 +15,7 @@ jobs:
       - name: Generate documentation
         uses: SwiftDocOrg/swift-doc@master
       - name: Upload documentation to wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@master
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
         with:
           path: ".build/documentation"
         env:
