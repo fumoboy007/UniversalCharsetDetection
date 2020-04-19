@@ -20,12 +20,12 @@ jobs:
 
     steps:
       - name: Print Swift compiler version
-        uses: Didstopia/SwiftAction@v1.0.1
+        uses: Didstopia/SwiftAction@v1.0.2
         with:
           swift-action: "--version"
       - uses: actions/checkout@v2
       - name: Run tests
-        uses: Didstopia/SwiftAction@v1.0.1
+        uses: Didstopia/SwiftAction@v1.0.2
         with:
           # TODO: Enable parallel tests after SR-12272 is fixed.
           swift-action: "test --enable-test-discovery"
